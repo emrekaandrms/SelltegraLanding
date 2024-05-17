@@ -1,0 +1,313 @@
+// Include any default variable overrides here (though functions won't be available)
+
+/* colors */
+$primary: #f16624;
+$info: #0885b9;
+$danger: #f40058;
+$warning: #efa500;
+$success: #00996d;
+$secondary: #444444;
+$dark: #151718;
+$light: #f5f7fa;
+$black: #000000;
+$white: #ffffff;
+/* colors end */
+
+/* fonts */
+// $font-size-root affects the value of `rem`, which is used for as well font sizes, paddings, and margins
+// $font-size-base affects the font size of the body text
+$font-size-root: 16px;
+$font-size-base: 1rem; // Assumes the browser default, typically `16px`
+/* fonts end */
+
+/* spacing */
+$spacer: 1rem;
+$spacers: (
+    0: 0,
+    1: $spacer * 0.25,
+    2: $spacer * 0.5,
+    3: $spacer,
+    4: $spacer * 2,
+    5: $spacer * 3,
+);
+/* spacing end */
+
+/* borders */
+$border-radius: 3px;
+$border-radius-sm: 1px;
+$border-radius-lg: 5px;
+
+$border-color: #dee2e6;
+/* borders end */
+
+/* buttons close */
+$btn-close-width: 1rem;
+$btn-close-height: $btn-close-width;
+$btn-close-padding-x: 0.5rem;
+$btn-close-padding-y: 1rem;
+$btn-close-color: $black;
+$btn-close-focus-shadow: none;
+$btn-close-opacity: 1;
+/* buttons close end */
+
+/* components */
+$component-active-color: $white;
+$component-active-bg: $primary;
+/* components end */
+
+/* navbar */
+$navbar-padding-y: 0.75rem;
+$navbar-padding-x: 1rem;
+
+$navbar-nav-link-padding-x: 1rem;
+
+// $navbar-brand-font-size: $font-size-lg;
+// // Compute the navbar-brand padding-y so the navbar-brand will have the same height as navbar-text and nav-link
+// $nav-link-height: $font-size-base * $line-height-base + $nav-link-padding-y * 2;
+// $navbar-brand-height: $navbar-brand-font-size * $line-height-base;
+$navbar-brand-padding-y: 0;
+// $navbar-brand-margin-end: 1rem;
+
+$navbar-toggler-padding-y: 0.25rem;
+$navbar-toggler-padding-x: 0.75rem;
+$navbar-toggler-transition: null;
+
+$navbar-dark-color: $light;
+$navbar-dark-hover-color: $primary;
+$navbar-dark-active-color: $primary;
+$navbar-dark-disabled-color: rgba($light, 0.3);
+$navbar-dark-toggler-border-color: $border-color;
+
+$navbar-light-color: $dark;
+$navbar-light-hover-color: $primary;
+$navbar-light-active-color: $primary;
+$navbar-light-disabled-color: rgba($dark, 0.3);
+$navbar-light-toggler-border-color: $border-color;
+/* navbar end */
+
+/* navlink */
+$nav-link-padding-y: 0.5rem;
+$nav-link-padding-x: 1rem;
+$nav-link-font-weight: 500;
+// $nav-link-color: $link-color;
+
+// $nav-tabs-border-width: 0;
+// $nav-tabs-link-hover-border-color: $gray-200 $gray-200 $nav-tabs-border-color;
+$nav-tabs-link-active-color: $white;
+$nav-tabs-link-active-bg: $primary;
+// $nav-tabs-link-active-border-color: $gray-300 $gray-300 $nav-tabs-link-active-bg;
+/* navlink end */
+
+/* dropdowns */
+$dropdown-min-width: 5rem;
+$dropdown-padding-x: 0.5rem;
+$dropdown-padding-y: 0.5rem;
+$dropdown-spacer: 0;
+
+$dropdown-border-color: $border-color;
+
+// $dropdown-link-color: $gray-900;
+// $dropdown-link-hover-color: shade-color($gray-900, 10%);
+// $dropdown-link-hover-bg: $gray-200;
+
+// $dropdown-link-disabled-color: $gray-500;
+
+// $dropdown-item-padding-y: $spacer * 0.25;
+// $dropdown-item-padding-x: $spacer;
+
+// $dropdown-header-color: $gray-600;
+// $dropdown-header-padding: $dropdown-padding-y $dropdown-item-padding-x;
+/* dropdowns end */
+
+/* headings */
+$headings-margin-bottom: 3rem;
+$headings-font-family: "Inter", sans-serif;
+$headings-font-style: normal;
+$headings-font-weight: 700;
+$headings-line-height: 1.2;
+$headings-color: $dark;
+
+$h1-font-size: $font-size-base * 4.5;
+$h2-font-size: $font-size-base * 4;
+$h3-font-size: $font-size-base * 3;
+$h4-font-size: $font-size-base * 2;
+$h5-font-size: $font-size-base * 1.5;
+$h6-font-size: $font-size-base * 1.25;
+/* headings end */
+
+/* typography */
+$small-font-size: 0.875rem;
+$sub-sup-font-size: 0.75rem;
+
+$text-muted: $secondary;
+
+// $initialism-font-size: $small-font-size;
+
+// $blockquote-margin-y: $spacer;
+// $blockquote-font-size: $font-size-base * 1.25;
+// $blockquote-footer-color: $gray-600;
+// $blockquote-footer-font-size: $small-font-size;
+
+// $hr-margin-y: $spacer;
+// $hr-color: inherit;
+// $hr-height: $border-width;
+// $hr-opacity: 0.25;
+
+// $legend-margin-bottom: 0.5rem;
+// $legend-font-size: 1.5rem;
+// $legend-font-weight: null;
+
+// $mark-padding: 0.2em;
+
+// $dt-font-weight: $font-weight-bold;
+
+// $nested-kbd-font-weight: $font-weight-bold;
+
+// $list-inline-padding: 0.5rem;
+
+// $mark-bg: #fcf8e3;
+/* typography end */
+
+/* links */
+$link-color: $dark;
+$link-hover-color: $primary;
+/* links end */
+
+/* cards */
+$card-spacer-y: 1rem;
+$card-spacer-x: 1rem;
+// $card-title-spacer-y: $spacer * 0.5;
+// $card-border-width: $border-width;
+// $card-border-radius: $border-radius;
+$card-border-color: $border-color;
+// $card-inner-border-radius: subtract($card-border-radius, $card-border-width);
+$card-cap-padding-y: 1rem;
+$card-cap-padding-x: 1rem;
+$card-cap-bg: none;
+$card-cap-color: $dark;
+// $card-img-overlay-padding: $spacer;
+// $card-group-margin: $grid-gutter-width * 0.5;
+/* cards end */
+
+/* buttons */
+$input-btn-padding-y: 0.5rem;
+$input-btn-padding-x: 1rem;
+$input-btn-font-size: 1rem;
+
+$input-btn-padding-y-sm: 0.5rem;
+$input-btn-padding-x-sm: 0.75rem;
+$input-btn-font-size-sm: 0.75rem;
+
+$input-btn-padding-y-lg: 0.5rem;
+$input-btn-padding-x-lg: 1.5rem;
+$input-btn-font-size-lg: 1.25rem;
+
+$input-border-color: $border-color;
+// $input-btn-border-width: ;
+// $input-btn-focus-width: ;
+$input-btn-focus-box-shadow: none;
+
+$input-btn-line-height: 1.2;
+
+$btn-font-weight: 500;
+$btn-white-space: null; // Set to `nowrap` to prevent text wrapping
+
+// $btn-box-shadow: inset 0 1px 0 rgba($white, 0.15), 0 1px 1px rgba($black, 0.075);
+// $btn-active-box-shadow: inset 0 3px 5px rgba($black, 0.125);
+
+$form-select-focus-border-color: $primary;
+$form-select-focus-box-shadow: none;
+
+$form-check-input-border: 1px solid rgba($black, 0.25);
+/* buttons end */
+
+/* accordion */
+$accordion-padding-y: 1rem;
+$accordion-padding-x: 1.25rem;
+
+$accordion-color: $dark;
+$accordion-bg: $white;
+
+$accordion-button-active-bg: $white;
+$accordion-button-active-color: $dark;
+
+$accordion-icon-color: $dark;
+$accordion-icon-active-color: $dark;
+
+$accordion-button-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='16' height='16' fill='#{$accordion-icon-color}'%3E%3Cpath fill='none' d='M0 0h24v24H0z'%3E%3C/path%3E%3Cpath d='M11 11V5H13V11H19V13H13V19H11V13H5V11H11Z'%3E%3C/path%3E%3C/svg%3E");
+$accordion-button-active-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='16' height='16' fill='#{$accordion-icon-active-color}'%3E%3Cpath fill='none' d='M0 0h24v24H0z'%3E%3C/path%3E%3Cpath d='M5 11V13H19V11H5Z'%3E%3C/path%3E%3C/svg%3E");
+/* accordion end */
+
+/* breadcrumbs */
+$breadcrumb-divider-color: $dark;
+$breadcrumb-active-color: $dark;
+$breadcrumb-margin-bottom: 0;
+/* breadcrumbs end */
+
+/* pagination */
+$pagination-padding-y: 0.5rem;
+$pagination-padding-x: 1rem;
+
+$pagination-color: $primary;
+$pagination-bg: $white;
+$pagination-border-radius: 3px;
+
+$pagination-focus-color: $white;
+$pagination-focus-bg: $primary;
+$pagination-focus-box-shadow: 0 0 0 0.25rem rgba($dark, 0.25);
+
+$pagination-hover-color: $white;
+$pagination-hover-bg: $primary;
+$pagination-hover-border-color: $primary;
+
+$pagination-active-color: $white;
+$pagination-active-bg: $primary;
+$pagination-active-border-color: $pagination-active-bg;
+/* pagination end */
+
+/* progress bar */
+$progress-height: 1.5rem;
+$progress-font-size: 1rem;
+// $progress-bg: $gray-200;
+// $progress-border-radius: $border-radius;
+// $progress-box-shadow: $box-shadow-inset;
+// $progress-bar-color: $white;
+// $progress-bar-bg: $primary;
+// $progress-bar-animation-timing: 1s linear infinite;
+// $progress-bar-transition: width 0.6s ease;
+/* progress bar end */
+
+/* settings */
+$enable-important-utilities: false;
+/* settings end */
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+/* custom overwrites */
+.dropdown-menu {
+    z-index: 3;
+}
+
+.breadcrumb-item {
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.breadcrumb-item.active {
+    font-weight: 800;
+}
+
+.accordion-item {
+    border: none;
+    border-top: 1px solid $border-color !important;
+}
+
+.accordion-button {
+    font-weight: 600;
+}
+
+.btn-primary,
+.btn-danger,
+.btn-success {
+    color: $white;
+}
