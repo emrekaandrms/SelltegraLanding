@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yorumlar - Selltegra Yönetim Paneli</title>
+    <meta name="description" content="Selltegra Yönetim Paneli">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="admin-dashboard">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="admin-logo">
+                <h2>Selltegra</h2>
+            </div>
+            <ul class="admin-nav">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="posts.html">Blog Yazıları</a></li>
+                <li><a href="new-post.html">Yeni Yazı</a></li>
+                <li><a href="comments.html" class="active">Yorumlar</a></li>
+                <li><a href="settings.html">Ayarlar</a></li>
+                <li><a href="#" onclick="handleLogout()">Çıkış Yap</a></li>
+            </ul>
+        </aside>
+
+        <!-- Ana İçerik -->
+        <main class="admin-content">
+            <header class="admin-header">
+                <h1>Yorumlar</h1>
+                <div class="admin-user-menu">
+                    <button class="admin-user-button">
+                        <span id="current-user">Admin</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Yorum Listesi -->
+            <div class="admin-card">
+                <div class="card-header">
+                    <h3>Tüm Yorumlar</h3>
+                    <div class="filter-box">
+                        <select id="comment-status-filter">
+                            <option value="all">Tüm Yorumlar</option>
+                            <option value="pending">Onay Bekleyenler</option>
+                            <option value="approved">Onaylananlar</option>
+                            <option value="rejected">Reddedilenler</option>
+                        </select>
+                    </div>
+                </div>
+
+                <table class="comments-table">
+                    <thead>
+                        <tr>
+                            <th>Yazar</th>
+                            <th>Yorum</th>
+                            <th>Blog Yazısı</th>
+                            <th>Tarih</th>
+                            <th>Durum</th>
+                            <th>İşlemler</th>
+                        </tr>
+                    </thead>
+                    <tbody id="comments-list">
+                        <!-- JavaScript ile doldurulacak -->
+                    </tbody>
+                </table>
+
+                <!-- Sayfalama -->
+                <div class="pagination">
+                    <button class="prev" disabled>Önceki</button>
+                    <span class="current">Sayfa 1</span>
+                    <button class="next">Sonraki</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../assets/js/admin.js"></script>
+</body>
+</html> 

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Yazıları - Selltegra Yönetim Paneli</title>
+    <meta name="description" content="Selltegra Yönetim Paneli">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+<body>
+    <div class="admin-dashboard">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="admin-logo">
+                <h2>Selltegra</h2>
+            </div>
+            <ul class="admin-nav">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="posts.html" class="active">Blog Yazıları</a></li>
+                <li><a href="new-post.html">Yeni Yazı</a></li>
+                <li><a href="settings.html">Ayarlar</a></li>
+                <li><a href="#" onclick="handleLogout()">Çıkış Yap</a></li>
+            </ul>
+        </aside>
+
+        <!-- Ana İçerik -->
+        <main class="admin-content">
+            <header class="admin-header">
+                <h1>Blog Yazıları</h1>
+                <div class="admin-user-menu">
+                    <button class="admin-user-button">
+                        <span id="current-user">Admin</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Blog Yazıları Listesi -->
+            <div class="admin-card">
+                <div class="card-header">
+                    <h3>Tüm Blog Yazıları</h3>
+                    <a href="new-post.html" class="save-button">Yeni Yazı Ekle</a>
+                </div>
+                
+                <!-- Filtreleme ve Arama -->
+                <div class="filter-section">
+                    <div class="search-box">
+                        <input type="text" id="search-posts" placeholder="Blog yazısı ara...">
+                    </div>
+                    <div class="filter-box">
+                        <select id="category-filter">
+                            <option value="">Tüm Kategoriler</option>
+                            <option value="E-ticaret">E-ticaret</option>
+                            <option value="Dijital Pazarlama">Dijital Pazarlama</option>
+                            <option value="SEO">SEO</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Blog Yazıları Tablosu -->
+                <table class="post-list">
+                    <thead>
+                        <tr>
+                            <th style="width: 40%">BAŞLIK</th>
+                            <th style="width: 20%">KATEGORİ</th>
+                            <th style="width: 20%">TARİH</th>
+                            <th style="width: 20%">İŞLEMLER</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="post-title">E-ticarette Başarının Sırları</td>
+                            <td class="post-category">E-ticaret</td>
+                            <td class="post-date">01.03.2024</td>
+                            <td class="post-actions">
+                                <button class="action-button edit-button">
+                                    <i class="fas fa-edit"></i>
+                                    Düzenle
+                                </button>
+                                <button class="action-button delete-button">
+                                    <i class="fas fa-trash"></i>
+                                    Sil
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="post-title">Sosyal Medya Pazarlama Trendleri</td>
+                            <td class="post-category">Dijital Pazarlama</td>
+                            <td class="post-date">28.02.2024</td>
+                            <td class="post-actions">
+                                <button class="action-button edit-button">
+                                    <i class="fas fa-edit"></i>
+                                    Düzenle
+                                </button>
+                                <button class="action-button delete-button">
+                                    <i class="fas fa-trash"></i>
+                                    Sil
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Sayfalama -->
+                <div class="pagination">
+                    <button class="prev" disabled>Önceki</button>
+                    <span class="current">Sayfa 1</span>
+                    <button class="next">Sonraki</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../assets/js/admin.js"></script>
+</body>
+</html> 

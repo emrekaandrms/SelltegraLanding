@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yeni Blog Yazısı - Selltegra Yönetim Paneli</title>
+    <meta name="description" content="Selltegra Yönetim Paneli">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+<body>
+    <div class="admin-dashboard">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="admin-logo">
+                <h2>Selltegra</h2>
+            </div>
+            <ul class="admin-nav">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="posts.html">Blog Yazıları</a></li>
+                <li><a href="new-post.html" class="active">Yeni Yazı</a></li>
+                <li><a href="settings.html">Ayarlar</a></li>
+                <li><a href="#" onclick="handleLogout()">Çıkış Yap</a></li>
+            </ul>
+        </aside>
+
+        <!-- Ana İçerik -->
+        <main class="admin-content">
+            <header class="admin-header">
+                <h1>Yeni Blog Yazısı</h1>
+                <div class="admin-user-menu">
+                    <button class="admin-user-button">
+                        <span id="current-user">Admin</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Blog Yazısı Formu -->
+            <div class="admin-card">
+                <form class="post-form" id="new-post-form">
+                    <div class="form-group">
+                        <label for="title">Başlık</label>
+                        <input type="text" id="title" name="title" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="category">Kategori</label>
+                        <select id="category" name="category" required>
+                            <option value="">Kategori Seçin</option>
+                            <option value="E-ticaret">E-ticaret</option>
+                            <option value="Dijital Pazarlama">Dijital Pazarlama</option>
+                            <option value="SEO">SEO</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="excerpt">Özet</label>
+                        <textarea id="excerpt" name="excerpt" rows="3" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="content">İçerik</label>
+                        <textarea id="content" name="content" rows="10" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="image">Kapak Görseli *</label>
+                        <input type="file" id="image" name="image" accept="image/*" required>
+                        <p class="help-text">Önerilen boyut: 1200x630 piksel (Zorunlu alan)</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="meta-title">Meta Başlık</label>
+                        <input type="text" id="meta-title" name="meta-title">
+                        <div class="character-counter">
+                            <span id="meta-title-counter">0</span>/60 karakter
+                        </div>
+                        <p class="help-text">SEO için sayfa başlığı (60 karakterden az olmalı)</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="meta-description">Meta Açıklama</label>
+                        <textarea id="meta-description" name="meta-description" rows="2"></textarea>
+                        <div class="character-counter">
+                            <span id="meta-description-counter">0</span>/160 karakter
+                        </div>
+                        <p class="help-text">SEO için sayfa açıklaması (160 karakterden az olmalı)</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tags">Etiketler</label>
+                        <input type="text" id="tags" name="tags">
+                        <p class="help-text">Etiketleri virgülle ayırın</p>
+                    </div>
+
+                    <div class="post-form-buttons">
+                        <button type="button" class="cancel-button" onclick="window.location.href='posts.html'">İptal</button>
+                        <button type="submit" class="save-button">Yayınla</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <script src="../assets/js/admin.js"></script>
+</body>
+</html> 

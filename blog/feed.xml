@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>Selltegra Blog</title>
+        <link>https://selltegra.com/blog/</link>
+        <description>Selltegra Blog - E-ticaret, Dijital Pazarlama ve SEO hakkında güncel bilgiler</description>
+        <language>tr-TR</language>
+        <lastBuildDate></lastBuildDate>
+        <atom:link href="https://selltegra.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
+    </channel>
+</rss> 

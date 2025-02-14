@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayarlar - Selltegra Yönetim Paneli</title>
+    <meta name="description" content="Selltegra Yönetim Paneli">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+<body>
+    <div class="admin-dashboard">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="admin-logo">
+                <h2>Selltegra</h2>
+            </div>
+            <ul class="admin-nav">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="posts.html">Blog Yazıları</a></li>
+                <li><a href="new-post.html">Yeni Yazı</a></li>
+                <li><a href="settings.html" class="active">Ayarlar</a></li>
+                <li><a href="#" onclick="handleLogout()">Çıkış Yap</a></li>
+            </ul>
+        </aside>
+
+        <!-- Ana İçerik -->
+        <main class="admin-content">
+            <header class="admin-header">
+                <h1>Ayarlar</h1>
+                <div class="admin-user-menu">
+                    <button class="admin-user-button">
+                        <span id="current-user">Admin</span>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Ayarlar Formları -->
+            <div class="admin-grid">
+                <!-- Profil Ayarları -->
+                <div class="admin-card">
+                    <h3>Profil Ayarları</h3>
+                    <form class="settings-form" id="profile-form">
+                        <div class="form-group">
+                            <label for="username">Kullanıcı Adı</label>
+                            <input type="text" id="username" name="username" value="admin" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-posta</label>
+                            <input type="email" id="email" name="email" value="admin@selltegra.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="current-password">Mevcut Şifre</label>
+                            <input type="password" id="current-password" name="current-password">
+                        </div>
+                        <div class="form-group">
+                            <label for="new-password">Yeni Şifre</label>
+                            <input type="password" id="new-password" name="new-password">
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm-password">Yeni Şifre (Tekrar)</label>
+                            <input type="password" id="confirm-password" name="confirm-password">
+                        </div>
+                        <button type="submit" class="save-button">Değişiklikleri Kaydet</button>
+                    </form>
+                </div>
+
+                <!-- Site Ayarları -->
+                <div class="admin-card">
+                    <h3>Site Ayarları</h3>
+                    <form class="settings-form" id="site-settings-form">
+                        <div class="form-group">
+                            <label for="site-title">Site Başlığı</label>
+                            <input type="text" id="site-title" name="site-title" value="Selltegra" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="site-description">Site Açıklaması</label>
+                            <textarea id="site-description" name="site-description" rows="3" required>Modern e-ticaret çözümleri</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email">İletişim E-postası</label>
+                            <input type="email" id="contact-email" name="contact-email" value="info@selltegra.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-phone">İletişim Telefonu</label>
+                            <input type="tel" id="contact-phone" name="contact-phone" value="+90 xxx xxx xx xx">
+                        </div>
+                        <button type="submit" class="save-button">Değişiklikleri Kaydet</button>
+                    </form>
+                </div>
+
+                <!-- Blog Ayarları -->
+                <div class="admin-card">
+                    <h3>Blog Ayarları</h3>
+                    <form class="settings-form" id="blog-settings-form">
+                        <div class="form-group">
+                            <label for="posts-per-page">Sayfa Başına Gösterilecek Yazı Sayısı</label>
+                            <input type="number" id="posts-per-page" name="posts-per-page" value="6" min="1" max="20" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="comment-moderation">Yorum Moderasyonu</label>
+                            <select id="comment-moderation" name="comment-moderation">
+                                <option value="1">Yorumlar onay beklesin</option>
+                                <option value="0">Yorumlar direkt yayınlansın</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" name="show-author" checked>
+                                Yazar bilgisini göster
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" name="show-date" checked>
+                                Tarih bilgisini göster
+                            </label>
+                        </div>
+                        <button type="submit" class="save-button">Değişiklikleri Kaydet</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../assets/js/admin.js"></script>
+</body>
+</html> 
