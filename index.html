@@ -94,13 +94,6 @@
                                 </div>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link nav-link2 text-center" href=".\blog\index.html">
-                                <div>
-                                    <span data-lang="menu.blog">Blog</span>
-                                </div>
-                            </a>
-                        </li>
                     </ul>
                     
                 </div>
@@ -241,9 +234,8 @@
         <section class="bg-gray site-pv index2" id="hizmetler">
             <div class="container text-center">
                 <h3 data-lang="production.title">Hızlı Üretim <span class="text-primary fw-bold">& Stoksuz Ticaret</span></h3>
-                <p data-lang="production.description" style="padding: 0 50px;margin-bottom: 40px;">Müşterilerinizin siparişlerini aynı gün üretiyor ve dünyanın her yerine teslimatını sağlıyoruz. Müşterilerinizin memnuniyetini en üst seviyeye çıkarın.</p>
-                <img src="img/hizli_uretim_img.png" alt="" style="max-width: 100%;
-                height: auto;">
+                <p data-lang="production.description" style="padding: 0 150px;margin-bottom: 40px;">Müşterilerinizin siparişlerini aynı gün üretiyor ve dünyanın her yerine teslimatını sağlıyoruz. Müşterilerinizin memnuniyetini en üst seviyeye çıkarın.</p>
+                <img src="img/hizli_uretim_img.png" alt="Hızlı Üretim" class="img-fluid" style="max-width: 800px; width: 100%; margin-top: 20px;">
             </div>
         </section>
 
@@ -333,13 +325,7 @@
                                 </div>
                                 <div class="form-row">
                                     <div class="form-col">
-                                        <input type="checkbox" class="form-input-chck">
-                                        <a href="#" data-lang="contactForm.terms">Aydınlatma ve Açık Rıza Metni'ni okudum ve kabul ediyorum.</a>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-col">
-                                        <input type="button" class="form-btn" data-lang="contactForm.submit" value="Gönder">
+                                        <input type="button" class="form-btn" onclick="location.href='https://app.selltegra.com/sign-up';" data-lang="contactForm.submit" value="Gönder">
                                     </div>
                                 </div>
                             </div>
@@ -493,7 +479,7 @@
         <div class="container pb-3">
             <hr>
             <div class="d-flex flex-wrap align-items-center justify-content-between">
-                <small data-lang="footer.copyright">&copy; Copyrights. All rights reserved 2024</small>
+                <small data-lang="footer.copyright">&copy; Copyrights. All rights reserved 2025</small>
                 
             </div>
         </div>
@@ -507,37 +493,6 @@
     </div>
 
 
-    <script>
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-        
-            const form = event.target;
-            const formData = new FormData(form);
-        
-            fetch(form.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            }).then(response => {
-                if (response.ok) {
-                    alert('Message sent successfully!');
-                    form.reset();
-                } else {
-                    response.json().then(data => {
-                        if (Object.hasOwn(data, 'errors')) {
-                            alert(data["errors"].map(error => error["message"]).join(", "));
-                        } else {
-                            alert('Oops! There was a problem submitting your form');
-                        }
-                    });
-                }
-            }).catch(error => {
-                alert('Oops! There was a problem submitting your form');
-            });
-        });
-        </script>
         
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
