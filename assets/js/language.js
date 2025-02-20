@@ -1,6 +1,33 @@
 // Varsayılan dil
 let currentLang = localStorage.getItem('language') || 'tr';
 
+// IP'ye göre dil belirleme fonksiyonu
+async function setLanguageByLocation() {
+    try {
+        const response = await fetch('https://ipapi.co/json/');
+        const data = await response.json();
+        
+        // Türkiye'den bağlanıyorsa Türkçe, değilse İngilizce
+        const detectedLang = data.country_code === 'TR' ? 'tr' : 'en';
+        
+        // Eğer daha önce kullanıcı tarafından seçilmiş bir dil yoksa
+        if (!localStorage.getItem('language')) {
+            currentLang = detectedLang;
+            localStorage.setItem('language', detectedLang);
+        }
+        
+        translatePage();
+    } catch (error) {
+        console.error('Lokasyon belirleme hatası:', error);
+        // Hata durumunda varsayılan olarak Türkçe göster
+        if (!localStorage.getItem('language')) {
+            currentLang = 'tr';
+            localStorage.setItem('language', 'tr');
+        }
+        translatePage();
+    }
+}
+
 // Dil değiştirme fonksiyonu
 function changeLang(lang) {
     currentLang = lang;
@@ -11,7 +38,7 @@ function changeLang(lang) {
 // Sayfayı çevir
 function translatePage() {
     const elements = document.querySelectorAll('[data-lang]');
-    const langData = currentLang === 'tr' ? tr : en;
+    const langData = currentLang === 'tr' ? TR_LANG : EN_LANG;
 
     elements.forEach(element => {
         const key = element.getAttribute('data-lang');
@@ -41,11 +68,18 @@ function translatePage() {
 
     // HTML lang attribute'unu güncelle
     document.documentElement.lang = currentLang;
+    
+    // Dil seçici dropdown'ını güncelle
+    const languageText = document.querySelector('#languageDropdown span');
+    if (languageText) {
+        languageText.textContent = currentLang === 'tr' ? 'Türkçe' : 'English';
+    }
 }
 
-// Sayfa yüklendiğinde çeviriyi başlat
+// Sayfa yüklendiğinde çalıştır
 document.addEventListener('DOMContentLoaded', () => {
-    translatePage();
+    // IP bazlı dil tespitini başlat
+    setLanguageByLocation();
 
     // Dil seçimi için event listener ekle
     const langButtons = document.querySelectorAll('.lang-select');

@@ -1,4 +1,4 @@
-const en = {
+const EN_LANG = {
     // General
     "language": "English",
     

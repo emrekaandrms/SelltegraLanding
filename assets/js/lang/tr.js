@@ -1,4 +1,4 @@
-const tr = {
+const TR_LANG = {
     // Genel
     "language": "Türkçe",
     
