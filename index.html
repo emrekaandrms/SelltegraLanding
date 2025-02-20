@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
@@ -22,10 +22,27 @@
     <link rel="apple-touch-icon" href="favicon.png">
     <title>E-Commerce</title>
     <script>
+        // Dil içeriklerini güncelleme fonksiyonu
+        function updateContent() {
+            const currentLang = localStorage.getItem('language') || 'en';
+            const translations = currentLang === 'tr' ? TR_LANG : EN_LANG;
+            
+            // Dil etiketlerini güncelle
+            document.querySelectorAll('[data-lang]').forEach(element => {
+                const key = element.getAttribute('data-lang');
+                if (translations[key]) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.placeholder = translations[key];
+                    } else {
+                        element.textContent = translations[key];
+                    }
+                }
+            });
+        }
+
         // Dil seçimi için fonksiyon
         async function setLanguageByLocation() {
             try {
-                // IP geolocation API'ından ülke bilgisini al
                 const response = await fetch('https://ipapi.co/json/');
                 const data = await response.json();
                 
@@ -51,8 +68,13 @@
 
         // Sayfa yüklendiğinde çalıştır
         document.addEventListener('DOMContentLoaded', () => {
-            // Eğer daha önce dil seçimi yapılmamışsa lokasyona göre belirle
-            if (!localStorage.getItem('language')) {
+            // localStorage'da dil tercihi varsa onu kullan
+            const savedLanguage = localStorage.getItem('language');
+            if (savedLanguage) {
+                document.documentElement.lang = savedLanguage;
+                updateContent();
+            } else {
+                // Yoksa IP'ye göre belirle
                 setLanguageByLocation();
             }
         });
